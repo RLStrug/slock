@@ -20,9 +20,9 @@ options:
 
 ${OBJ}: config.h config.mk arg.h util.h
 
-config.h:
+config.h: config.def.h
 	@echo creating $@ from config.def.h
-	@cp config.def.h $@
+	@cp $< $@
 
 slock: ${OBJ}
 	@echo CC -o $@
